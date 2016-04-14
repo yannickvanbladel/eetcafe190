@@ -1,0 +1,29 @@
+
+# Pimcore install
+pimcore/
+
+# Compile cache
+.sass-cache/
+
+# Dependencies
+public/lib/
+node_modules/
+
+# IDE configuration files
+.idea/
+nbproject/
+.settings/
+.project/
+
+# Generated files
+website/var/log/*.log
+website/var/tmp/
+website/var/versions/
+website/var/system/update/
+website/var/system/db-change-log_*.sql
+website/var/recyclebin/
+website/var/backup/
+website/var/email/
+website/var/plugins/
+website/var/cache/
+website/var/assets/

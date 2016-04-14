@@ -1,0 +1,22 @@
+{
+    "name": "eetcafe190",
+    "version": "0.0.1",
+    "authors": [
+    "Yannick van Bladel"
+    ],
+    "description": "",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "jquery": "1.11.2"
+    },
+    "devDependencies": {
+        "blocss": "~5"
+    },
+    "componentsDirectory": "lib",
+    "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+    ]
+}

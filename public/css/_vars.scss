@@ -1,0 +1,110 @@
+/*----------------------------------------------------------------------------*\
+    $VARS
+    Any variables you find set in blocss’ `_defaults.scss` that you do not wish
+    to keep, simply redefine here. This means that if blocss, for example,
+    sets your `$base-font-size` at 16px and you wish it to be 14px, simply
+    redeclare that variable in this file. Blocss ignores its own variables
+    in favour of using your own, so you can completely modify how blocss
+    works without ever having to alter the framework itself.
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULES.................Enable/disable modules
+    OVERRIDES...............Variables that should override defaults
+    CUSTOM..................Your own variables
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULES
+    All of blocss’ objects and abstractions are initially turned off by
+    default. This means that you start any project with as little as possible,
+    and introducing objects and abstractions is as simple as switching the
+    following variables to `true`.
+\*----------------------------------------------------------------------------*/
+
+
+    /* Modules */
+    $use-arrange:                       false;
+    $use-buttons:                       false;
+    $use-flexembed:                     false;
+    $use-island:                        false;
+    $use-media:                         false;
+    $use-navigation:                    false;
+
+    $use-grid:                          false;
+        $grid-gutter-multiplier:        1;
+        $enable-grid-rev:               false;
+        $enable-grid-right:             false;
+        $enable-grid-center:            false;
+        $enable-grid-middle:            false;
+        $enable-grid-narrow:            false;
+        $enable-grid-wide:              false;
+        $enable-grid-flush:             false;
+
+    /* Generic */
+    $use-units:                         false;
+    $use-push:                          false;
+    $use-pull:                          false;
+
+    $divisions:                         12;
+
+    /* Responsive */
+    $breakpoints: (
+        'palm'      '(max-width: 480px)',
+        'lap'       '(min-width: 481px) and (max-width: 960px)',
+        'desk'      '(min-width: 961px)'
+    );
+
+    $breakpoint-has-units:              ('palm', 'lap', 'desk');
+    $breakpoint-has-push:               ();
+    $breakpoint-has-pull:               ();
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $OVERRIDES
+    Place any variables that should override blocss’ defaults here.
+\*----------------------------------------------------------------------------*/
+
+    $base-font-size:                        16px;
+    $base-line-height:                      24px;
+    $line-height-ratio:                     $base-line-height/$base-font-size;
+
+    $giga:                                  96px;
+    $mega:                                  72px;
+    $kilo:                                  48px;
+
+    $alpha:                                 21px;
+    $beta:                                  20px;
+    $gamma:                                 19px;
+    $delta:                                 18px;
+    $epsilon:                               17px;
+    $zeta:                                  17px;
+
+    $milli:                                 14px;
+    $micro:                                 12px;
+
+    $face-base:                             'Open Sans', Helvetica, Arial, sans-serif;
+
+    $transition:                        cubic-bezier(.55,0,.1,1);
+
+/*----------------------------------------------------------------------------*\
+    $CUSTOM
+    Place any of your own variables that sit on top of blocss here.
+\*----------------------------------------------------------------------------*/
+
+    $color-base:                        #000000; // black
+    $color-brand:                       #BDCE24; // green
+
+    $site-width:                        980px;

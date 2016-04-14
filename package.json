@@ -1,0 +1,15 @@
+{
+    "name": "eetcafe190",
+    "version": "1.0.0",
+    "description": "",
+    "main": "Gruntfile.js",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-compass": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-text-replace": "latest",
+        "load-grunt-tasks": "latest"
+    }
+}

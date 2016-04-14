@@ -1,0 +1,10 @@
+/* TEAM */
+	Team: Yannick van Bladel
+	Site: http://yannickvanbladel.nl
+	Location: Oisterwijk, Netherlands
+
+/* THANKS */
+
+/* SITE */
+	Standards: HTML5, CSS3
+	Components: Modernizr, Blocss

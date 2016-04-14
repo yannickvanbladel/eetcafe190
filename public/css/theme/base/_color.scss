@@ -1,0 +1,102 @@
+/*----------------------------------------------------------------------------*\
+    $COLOR
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULE..................Includes base module & submodules
+    STATE...................States the module can be in
+    THEME...................Theming of the module
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULE
+\*----------------------------------------------------------------------------*/
+
+    /**
+     * name/color combos, for use in each loops
+     */
+        $colors: (
+            'white'            #FFF,
+            'base'             $color-base,
+            'brand'            $color-brand
+        );
+
+    /**
+     * Backgrounds & colors
+     */
+        @each $color in $colors {
+
+            $label: nth($color, 1);
+            $value: nth($color, 2);
+
+            .bg--#{$label} {
+                background-color: $value;
+            }
+
+            .color--#{$label} {
+                color: $value !important;
+            }
+        }
+
+
+
+/*----------------------------------------------------------------------------*\
+    $STATE
+\*----------------------------------------------------------------------------*/
+
+    /* Media Queries
+       The default media queries shipped with Blocss:
+       Uncomment the ones you need
+    \*------------------------------------------------------------------------*/
+
+        /**
+         * Desk-wide state
+         */
+        //@include media-query(gt-desk){}
+
+
+        /**
+         * Desk state
+         */
+        //@include media-query(desk){}
+
+
+        /**
+         * Portable state
+         */
+        //@include media-query(lt-desk){}
+
+
+        /**
+         * Lap state
+         */
+        //@include media-query(lap){}
+
+
+        /**
+         * Lapup state
+         */
+        //@include media-query(gt-palm){}
+
+
+        /**
+         * Palm state
+         */
+        //@include media-query(palm){}
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $THEME
+\*----------------------------------------------------------------------------*/

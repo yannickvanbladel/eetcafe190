@@ -1,0 +1,179 @@
+/*----------------------------------------------------------------------------*\
+    $LAYER
+    page part
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULE..................Includes base module & submodules
+    STATE...................States the module can be in
+    THEME...................Theming of the module
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULE
+\*----------------------------------------------------------------------------*/
+
+    .stripes{
+
+        .stripe{
+            will-change: width, left, z-index, height, top;
+            position: absolute;
+            width: 20vw;
+            height: 100vh;
+            transition: all 0.5s $transition;
+            z-index: 1;
+
+            &[data-state="active"]{
+                width: 100vw;
+                left: 0;
+                z-index: 200;
+                //transition: z-index 0s $transition 0s;
+            }
+        }
+    }
+
+    .stripe--close{
+        position: absolute;
+        top: $space;
+        right: -$space*2;
+        height: $space*2;
+        width: $space*2;
+        display: block;
+        cursor: pointer;
+        z-index: 202;
+        transition: right 0.5s $transition;
+
+        &:before,
+        &:after{
+            content: "";
+            position: absolute;
+            width: $space;
+            height: 2px;
+            left: $space*0.75;
+            background: white;
+            top: $space;
+            box-shadow:
+            0 0 0 0 rgba(white, 0),
+            0 0 0 0 rgba(white, 0);
+        }
+
+        &:before{
+            -webkit-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+            transform: rotate(315deg);
+        }
+        &:after{
+            -webkit-transform: rotate(-315deg);
+            -ms-transform: rotate(-315deg);
+            transform: rotate(-315deg);
+        }
+
+        &[data-state="active"]{
+            right: $space;
+        }
+    }
+
+    $colors: red, orange, yellow, green, blue, purple, grey, black, pink, brown;
+
+
+    @for $i from 1 through 5 {
+        $colorKey: random(10);
+        $nth: nth($colors, $colorKey);
+        $left: percentage(($i - 1) * 0.2);
+
+        .stripe-#{$i} {
+            left: $left;
+            background-color: $nth;
+        }
+    }
+
+
+
+/*----------------------------------------------------------------------------*\
+    $STATE
+\*----------------------------------------------------------------------------*/
+
+    /* Media Queries
+       The default media queries shipped with Blocss:
+       Uncomment the ones you need
+    \*------------------------------------------------------------------------*/
+
+        /**
+         * Desk-wide state
+         */
+        //@include media-query(gt-desk){}
+
+
+        /**
+         * Desk state
+         */
+        //@include media-query(desk){}
+
+
+        /**
+         * Portable state
+         */
+        //@include media-query(lt-desk){}
+
+
+        /**
+         * Lap state
+         */
+        //@include media-query(lap){}
+
+
+        /**
+         * Lapup state
+         */
+        //@include media-query(gt-palm){}
+
+
+        /**
+         * Palm state
+         */
+        @include media-query(palm){
+            .stripes{
+                .stripe{
+                    position: absolute;
+                    width: 100%;
+                    height: 20vh;
+                    left: 0;
+
+                    &[data-state="active"]{
+                        height: 100vh;
+                        top: 0;
+                        left: 0;
+                        z-index: 10;
+                    }
+                }
+            }
+
+            @for $i from 1 through 5 {
+                $colorKey: random(10);
+                $nth: nth($colors, $colorKey);
+                $top: percentage(($i - 1) * 0.2);
+
+                .stripe-#{$i} {
+                    top: $top;
+                    background-color: $nth;
+                }
+            }
+
+        }
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $THEME
+\*----------------------------------------------------------------------------*/
