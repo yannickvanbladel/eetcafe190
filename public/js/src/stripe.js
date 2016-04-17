@@ -28,7 +28,7 @@ App.stripe = {
         this.$close.addClass('animated');
         setTimeout(function () {
              this.$close.removeClass('animated');
-        },500);
+        }.bind(this),500);
 
         this.$close.attr('data-state', 'active');
     },
@@ -40,6 +40,10 @@ App.stripe = {
              $(active).removeClass('animated');
              active = '';
         },500);
+        this.$close.addClass('animated');
+        setTimeout(function () {
+             this.$close.removeClass('animated');
+        }.bind(this),500);
 
         this.$close.attr('data-state', 'passive');
     }

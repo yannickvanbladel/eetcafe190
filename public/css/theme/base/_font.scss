@@ -38,6 +38,35 @@
 }
 
 
+@font-face {
+    font-family: 'blanchcaps';
+    src: url('../font/blanch_caps-webfont.eot');
+    src: url('../font/blanch_caps-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/blanch_caps-webfont.woff2') format('woff2'),
+         url('../font/blanch_caps-webfont.woff') format('woff'),
+         url('../font/blanch_caps-webfont.ttf') format('truetype'),
+         url('../font/blanch_caps-webfont.svg#blanchcaps') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'blanchcondensed';
+    src: url('../font/blanch_condensed-webfont.eot');
+    src: url('../font/blanch_condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/blanch_condensed-webfont.woff2') format('woff2'),
+         url('../font/blanch_condensed-webfont.woff') format('woff'),
+         url('../font/blanch_condensed-webfont.ttf') format('truetype'),
+         url('../font/blanch_condensed-webfont.svg#blanchcondensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*----------------------------------------------------------------------------*\
     $STATE
 \*----------------------------------------------------------------------------*/
