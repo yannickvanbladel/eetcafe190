@@ -40,7 +40,7 @@
     $use-media:                         false;
     $use-navigation:                    false;
 
-    $use-grid:                          false;
+    $use-grid:                          true;
         $grid-gutter-multiplier:        1;
         $enable-grid-rev:               false;
         $enable-grid-right:             false;
@@ -51,7 +51,7 @@
         $enable-grid-flush:             false;
 
     /* Generic */
-    $use-units:                         false;
+    $use-units:                         true;
     $use-push:                          false;
     $use-pull:                          false;
 
@@ -85,7 +85,7 @@
     $mega:                                  72px;
     $kilo:                                  60px;
 
-    $alpha:                                 21px;
+    $alpha:                                 42px;
     $beta:                                  20px;
     $gamma:                                 19px;
     $delta:                                 18px;
@@ -105,7 +105,8 @@
     Place any of your own variables that sit on top of blocss here.
 \*----------------------------------------------------------------------------*/
 
-    $color-base:                        #000000; // black
+    $color-base:                        #262B30; // black
     $color-brand:                       #BDCE24; // green
+    $color-white:                         #ececec;
 
     $site-width:                        980px;

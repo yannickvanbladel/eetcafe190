@@ -70,7 +70,7 @@ margin-top: 20vh;
             .stripe__title{
                 position: absolute;
                 font-family: $face-brand;
-                color: #fff;
+                color: $color-white;
                 font-size: $kilo;
                 text-align: center;
                 top: 50%;
@@ -79,7 +79,7 @@ margin-top: 20vh;
                 -ms-transform: translate(-50%, -50%);
                 -webkit-transform: translate(-50%, -50%);
                 transition: all 0.5s $transition;
-                text-shadow: 1px 1px 2px #333, 2px 2px #333, 3px 3px #333, 3px 3px #333, 3px 3px #333;
+                text-shadow: 1px 1px 2px $color-base, 2px 2px $color-base, 3px 3px $color-base, 3px 3px $color-base, 3px 3px $color-base;
             }
 
             .stripe__content{
@@ -92,7 +92,6 @@ margin-top: 20vh;
                 	-moz-transition: opacity 0.5s $transition 0s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0.3s;
                 	transition: opacity 0.5s $transition 0s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0.3s;
                     transform-origin: center center;
-                    background: #fff;
                     display: inline-block;
                     margin-top: 0;
 
@@ -101,6 +100,7 @@ margin-top: 20vh;
                         padding: 0;
                         list-style-type: none;
                     }
+
             }
         }
     }
@@ -122,7 +122,7 @@ margin-top: 20vh;
             width: $space;
             height: 5px;
             left: $space*0.75;
-            background: white;
+            background: $color-white;
             top: $space;
             border-radius: 2px;
         }

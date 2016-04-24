@@ -1,0 +1,179 @@
+/*----------------------------------------------------------------------------*\
+    $TABS
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULE..................Includes base module & submodules
+    STATE...................States the module can be in
+    THEME...................Theming of the module
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULE
+\*----------------------------------------------------------------------------*/
+
+    .tabs{
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li{
+            position: relative;
+            width: 80vw;
+
+            h2{
+                background: rgba($color-base,.1);
+                cursor: pointer;
+                border: 1px solid rgba($color-base,.2);
+                border-top: none;
+                padding: $space-half/2;
+                width: 33.333333333333336%;
+                color: $color-white;
+                font-size: $alpha;
+                font-weight: 400;
+                font-family: $face-brand;
+
+                &:first-child{
+                    border-top: 1px solid rgba($color-base,.2);
+                }
+            }
+            .tab__content{
+                background: $color-white;
+                width: 66.66666666666667%;
+                position: absolute;
+                height: auto;
+                min-height: 100%;
+                border: 1px solid rgba($color-base,.2);
+                display: none;
+                right: 0;
+                top: -$space;
+                padding: $space;
+                box-shadow: 2px 2px 10px 0px rgba($color-base,0.75);
+
+
+
+                .marker--top{
+                    position: absolute;
+                    top: -3px;
+                    left: -2px;
+                    overflow: hidden;
+                    min-height: $space*2;
+                    right: 0;
+
+
+                    &:before{
+                        content: '';
+                        display: block;
+                        transform: rotate(-5deg);
+                        width: 60%;
+                        margin-top: -28px;
+                        margin-left: -$space;
+                        height: $space*2;
+                        box-shadow: 1px 1px 5px 0px rgba($color-base,0.75);
+                        background-image:linear-gradient(0deg, #c60b22, saturate(lighten(#c60b22, 12), 20));
+
+                    }
+                }
+
+                .marker--bottom{
+                    position: absolute;
+                    bottom: -3px;
+                    right: -4px;
+                    overflow: hidden;
+                    min-height: $space*2;
+                    left: 0;
+
+
+                    &:before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        transform: rotate(-5deg);
+                        width: 60%;
+                        bottom: -28px;
+                        right: -$space;
+
+                        height: $space*2;
+                        box-shadow: -1px -1px 2px 0px rgba($color-base,0.4);
+
+                        background-image:linear-gradient(0deg, #00345C, saturate(lighten(#00345C, 7), 0));
+                    }
+                }
+            }
+
+            &[data-state="active"]{
+                .tab__content{
+                    display: block;
+                }
+            }
+        }
+
+
+
+    }
+
+
+
+/*----------------------------------------------------------------------------*\
+    $STATE
+\*----------------------------------------------------------------------------*/
+
+    /* Media Queries
+       The default media queries shipped with Blocss:
+       Uncomment the ones you need
+    \*------------------------------------------------------------------------*/
+
+        /**
+         * Desk-wide state
+         */
+        //@include media-query(gt-desk){}
+
+
+        /**
+         * Desk state
+         */
+        //@include media-query(desk){}
+
+
+        /**
+         * Portable state
+         */
+        //@include media-query(lt-desk){}
+
+
+        /**
+         * Lap state
+         */
+        //@include media-query(lap){}
+
+
+        /**
+         * Lapup state
+         */
+        //@include media-query(gt-palm){}
+
+
+        /**
+         * Palm state
+         */
+        //@include media-query(palm){}
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $THEME
+\*----------------------------------------------------------------------------*/

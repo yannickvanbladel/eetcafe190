@@ -19,4 +19,6 @@
     $INCLUDES
 \*----------------------------------------------------------------------------*/
 
-    @import "modules/block";
+    @import "modules/block",
+            "modules/tabs",
+            "modules/definitionlist";
