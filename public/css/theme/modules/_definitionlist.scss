@@ -24,7 +24,15 @@
     .menu-list{
         dt{
             margin-bottom: $space-half;
-            font-style: italic;
+            font-weight: 600;
+
+            span{
+                font-weight: 400;
+                display: block;
+                font-style: italic;
+                font-size: $milli;
+            }
+
         }
         dd{
             margin-bottom: $space-half;

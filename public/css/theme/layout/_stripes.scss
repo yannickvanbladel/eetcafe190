@@ -28,7 +28,7 @@
             will-change: width, left, z-index, height, top;
             position: absolute;
             width: 100vw;
-            height: 20vh;
+            height: 25vh;
             z-index: 1;
             cursor: pointer;
             text-align: center;
@@ -54,16 +54,7 @@
                 }
 
                 .stripe__content{
-                    -webkit-transform: scale(1);
--moz-transform: scale(1) ;
--ms-transform: scale(1) ;
-transform: scale(1) ;
-opacity: 1;
--webkit-transition: opacity 0.5s $transition 0.2s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0s;
--moz-transition: opacity 0.5s $transition 0.2s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0s;
-transition: opacity 0.5s $transition 0.2s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0s;
-transform-origin: center center;
-margin-top: 20vh;
+
                 }
             }
 
@@ -82,26 +73,7 @@ margin-top: 20vh;
                 text-shadow: 1px 1px 2px $color-base, 2px 2px $color-base, 3px 3px $color-base, 3px 3px $color-base, 3px 3px $color-base;
             }
 
-            .stripe__content{
-                -webkit-transform: scale(0.5) ;
-                	-moz-transform: scale(0.5) ;
-                	-ms-transform: scale(0.5) ;
-                	transform: scale(0.5) ;
-                	opacity: 0;
-                	-webkit-transition: opacity 0.5s $transition 0s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0.3s;
-                	-moz-transition: opacity 0.5s $transition 0s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0.3s;
-                	transition: opacity 0.5s $transition 0s, transform 0.5s $transition 0s, margin-top 0.5s $transition 0.3s;
-                    transform-origin: center center;
-                    display: inline-block;
-                    margin-top: 0;
 
-                    ul{
-                        margin: 0;
-                        padding: 0;
-                        list-style-type: none;
-                    }
-
-            }
         }
     }
 
@@ -114,6 +86,8 @@ margin-top: 20vh;
         display: block;
         cursor: pointer;
         z-index: 202;
+        background: rgba($color-base, 0.5);
+        border-radius: 50%;
 
         &:before,
         &:after{
@@ -121,9 +95,9 @@ margin-top: 20vh;
             position: absolute;
             width: $space;
             height: 5px;
-            left: $space*0.75;
+            left: $space-half;
             background: $color-white;
-            top: $space;
+            top: $space*0.9;
             border-radius: 2px;
         }
 
@@ -150,8 +124,55 @@ margin-top: 20vh;
     }
 
 
-    @for $i from 1 through 5 {
-        $top: percentage(($i - 1) * 0.2);
+    .stripe__content{
+        -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            opacity: 0;
+            -webkit-transition: opacity 0.5s $transition 0s, margin-top 0.5s $transition 0s ;
+            -moz-transition: opacity 0.5s $transition 0s, margin-top 0.5s $transition 0s ;
+            transition: opacity 0.5s $transition 0s, margin-top 0.5s $transition 0s ;
+            transform-origin: center center;
+            display: block;
+            margin-top: 0;
+            height: 0;
+            z-index: -10;
+            position: absolute;
+            left: 50vw;
+            pointer-events: none;
+            width: auto;
+            overflow: hidden;
+
+
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+        &[data-state=active]{
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            opacity: 1;
+            -webkit-transition: opacity 0.5s $transition 0.2s, margin-top 0.5s $transition 0s;
+            -moz-transition: opacity 0.5s $transition 0.2s, margin-top 0.5s $transition 0s;
+            transition: opacity 0.5s $transition 0.2s, margin-top 0.5s $transition 0s;
+            transform-origin: center center;
+            margin-top: 20vh;
+            height: auto;
+            z-index: 10;
+            left: 50vw;
+            pointer-events: all;
+            overflow: visible;;
+        }
+
+    }
+
+    @for $i from 1 through 4 {
+        $top: percentage(($i - 1) * 0.25);
 
         .stripe-#{$i} {
             top: $top;
@@ -191,7 +212,7 @@ margin-top: 20vh;
             .stripes{
                 .stripe{
                     position: absolute;
-                    width: 20vw;
+                    width: 25vw;
                     height: 100vh;
                     top: 0;
 
@@ -208,10 +229,11 @@ margin-top: 20vh;
                         left: 50%;
                     }
                 }
+
             }
 
-            @for $i from 1 through 5 {
-                $left: percentage(($i - 1) * 0.2);
+            @for $i from 1 through 4 {
+                $left: percentage(($i - 1) * 0.25);
 
                 .stripe-#{$i} {
                     left: $left;
@@ -235,7 +257,25 @@ margin-top: 20vh;
         /**
          * Palm state
          */
-        //@include media-query(palm){}
+        @include media-query(palm){
+            .continent{
+                padding: $space !important;
+            }
+            .stripe__content{
+
+
+                &[data-state=active]{
+                    left: 0 !important;
+                    right: 0 !important;
+                    text-replace: none;
+                    -webkit-transform: translateX(0%) !important;
+                    -moz-transform: translateX(0%) !important;
+                    -ms-transform: translateX(0%) !important;
+                    transform: translateX(0%) !important;
+                }
+
+            }
+        }
 
 
 

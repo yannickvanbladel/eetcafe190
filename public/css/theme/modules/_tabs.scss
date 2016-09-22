@@ -27,40 +27,44 @@
             margin: 0;
             padding: 0;
             list-style-type: none;
+            //position: absolute;
+            top: $space*2;
         }
 
         li{
-            position: relative;
             width: 80vw;
+            margin-bottom: $space;
 
             h2{
-                background: rgba($color-base,.1);
+                position: relative;
+                background: #ececec;
                 cursor: pointer;
-                border: 1px solid rgba($color-base,.2);
+                margin-bottom: 8px;
                 border-top: none;
-                padding: $space-half/2;
-                width: 33.333333333333336%;
-                color: $color-white;
+                padding: $space-half $space;
+                line-height: 1em;
+                width: 40%;
+                color: $color-base;
                 font-size: $alpha;
                 font-weight: 400;
                 font-family: $face-brand;
-
-                &:first-child{
-                    border-top: 1px solid rgba($color-base,.2);
-                }
+                box-shadow: 2px 2px 20px 0px rgba($color-base,0.95);
+                transition: all 0.3s $transition 0s;
             }
             .tab__content{
                 background: $color-white;
-                width: 66.66666666666667%;
+                width: 80%;
                 position: absolute;
                 height: auto;
                 min-height: 100%;
                 border: 1px solid rgba($color-base,.2);
                 display: none;
                 right: 0;
+                z-index: 20;
                 top: -$space;
-                padding: $space;
-                box-shadow: 2px 2px 10px 0px rgba($color-base,0.75);
+                padding: $space*2 $space;
+                box-shadow: 2px 2px 20px 0px rgba($color-base,0.95);
+                margin-bottom: $space;
 
 
 
@@ -77,11 +81,11 @@
                         content: '';
                         display: block;
                         transform: rotate(-5deg);
-                        width: 60%;
+                        width: 400px;
                         margin-top: -28px;
                         margin-left: -$space;
                         height: $space*2;
-                        box-shadow: 1px 1px 5px 0px rgba($color-base,0.75);
+                        box-shadow: 1px 1px 10px 0px rgba(shade(#c60b22, 40),0.75);
                         background-image:linear-gradient(0deg, #c60b22, saturate(lighten(#c60b22, 12), 20));
 
                     }
@@ -101,12 +105,12 @@
                         display: block;
                         position: absolute;
                         transform: rotate(-5deg);
-                        width: 60%;
+                        width: 400px;
                         bottom: -28px;
                         right: -$space;
 
                         height: $space*2;
-                        box-shadow: -1px -1px 2px 0px rgba($color-base,0.4);
+                        box-shadow: -1px -1px 10px 0px rgba(shade(#00345C, 40),0.6);
 
                         background-image:linear-gradient(0deg, #00345C, saturate(lighten(#00345C, 7), 0));
                     }
@@ -114,6 +118,9 @@
             }
 
             &[data-state="active"]{
+                h2{
+                    margin-left: $space;
+                }
                 .tab__content{
                     display: block;
                 }
@@ -168,7 +175,35 @@
         /**
          * Palm state
          */
-        //@include media-query(palm){}
+        @include media-query(palm){
+            .tabs{
+                li{
+                    width: 100vw;
+                    max-width: 100%;
+                    h2{
+                        display: block;
+                        width: 100%;
+                    }
+                    .tab__content{
+                        position: relative;
+                        width: 100%;
+                        top: 0;
+                        margin-bottom: $space;
+                    }
+                    .marker--bottom,
+                    .marker--top{
+                        display: none !important;
+                    }
+                    &[data-state="active"]{
+                        h2{
+                            margin: 0;
+                            position: relative;
+                            z-index: 100;
+                        }
+                    }
+                }
+            }
+        }
 
 
 
